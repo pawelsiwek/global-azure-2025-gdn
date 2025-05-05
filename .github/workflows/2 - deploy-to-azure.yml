@@ -1,4 +1,4 @@
-name: deploy-toy-website
+name: deploy-toy-website-v2
 
 on: [workflow_dispatch]
 
