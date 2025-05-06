@@ -1,4 +1,4 @@
-name: deploy-toy-website-v6
+name: deploy-toy-website-v7
 concurrency: toy-company
 
 #on: [workflow_dispatch]
@@ -23,7 +23,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Run Bicep linter
-      run: az bicep build --file deploy/main-v6.bicep
+      run: az bicep build --file deploy/main-v7.bicep
 
   validate:
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
       with:
         deploymentName: ${{ github.run_number }}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main-v6.bicep
+        template: ./deploy/main-v7.bicep
         parameters: environmentType=${{ env.ENVIRONMENT }}
         deploymentMode: Validate
 
@@ -60,7 +60,7 @@ jobs:
       with:
         failOnStdErr: false
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main-v6.bicep
+        template: ./deploy/main-v7.bicep
         parameters: >
           environmentType=${{ env.ENVIRONMENT }}
         additionalArguments: --what-if
@@ -86,7 +86,7 @@ jobs:
         failOnStdErr: false
         deploymentName: ${{ github.run_number }}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main-v6.bicep
+        template: ./deploy/main-v7.bicep
         parameters: environmentType=${{ env.ENVIRONMENT }}
   
   smoke-test:
