@@ -1,6 +1,12 @@
-name: deploy-toy-website-v2
+name: deploy-toy-website-v3
+concurrency: toy-company
 
-on: [workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'deploy/**'
 
 permissions:
   id-token: write
@@ -24,5 +30,5 @@ jobs:
       with:
         deploymentName: ${{ github.run_number }}
         resourceGroupName: ${{ env.AZURE_RESOURCEGROUP_NAME }}
-        template: ./deploy/main.bicep
+        template: ./deploy/main-v3.bicep
         parameters: environmentType=${{ env.ENVIRONMENT }}

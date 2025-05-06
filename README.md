@@ -8,6 +8,11 @@
 2) generate Azure credentials, configure action, deploy Bicep using workflow
 ![image](img/2-excercise.png)
 
+(scripts from the learn.microsoft.com, may be useful to wget them in Azure Portal)
+```
+ wget https://raw.githubusercontent.com/pawelsiwek/global-azure-2025-gdn/refs/heads/main/scripts/excercise2.sh
+```
+
 # prep chacklist
 * Azure access
 * az cli (https://learn.microsoft.com/pl-pl/cli/azure/install-azure-cli-windows?pivots=winget)
