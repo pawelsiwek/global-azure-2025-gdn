@@ -13,5 +13,21 @@ az role assignment create \
    --scope $resourceGroupResourceId
 
 
+githubUser='pawelsiwek'
+githubRepo='global-azure-2025-gdn'
+federatedCredentialPolicy='{
+  "name": "MyFederatedCredential3",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:'$githubUser'/'$githubRepo':environment:Website",
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ]
+}'
+
+az ad app federated-credential create \
+  --id $applicationRegistrationObjectId \
+  --parameters "$federatedCredentialPolicy"
+
+
 #step6: cleanup
 az group delete --resource-group ToyWebsite --yes --no-wait

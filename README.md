@@ -28,12 +28,15 @@ assets:
 3) deep dive on workload identity
 * [scripts\excercise3.sh(.\scripts\excercise3.sh)
 
-4) extend workflow action to do linting & pre-flight validation
+4) extend workflow action to do linting & pre-flight validation, preview step
 
 assets:
 * [scripts\excercise3.sh](.\scripts\excercise4.sh)
 * [.github\workflows\deploy-toy-website-v5.yml](.github\workflows\deploy-toy-website-v5.yml)
 * [deploy\main-v5.bicep](.deploy\main-v5.bicep)
+* [.github\workflows\deploy-toy-website-v6.yml](.github\workflows\deploy-toy-website-v6.yml)
+* [deploy\main-v6.bicep](.deploy\main-v6.bicep)
+
 
 
 # prep chacklist
