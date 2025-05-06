@@ -13,7 +13,7 @@ az ad app federated-credential create \
    --id $applicationRegistrationObjectId \
    --parameters "{\"name\":\"toy-website-workflow\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:ref:refs/heads/main\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
 
-   resourceGroupResourceId=$(az group create --name ToyWebsite --location eastus --query id --output tsv)
+resourceGroupResourceId=$(az group create --name ToyWebsite --location eastus --query id --output tsv)
 
 # step4: create service principal & RBAC assignment
 az ad sp create --id $applicationRegistrationObjectId
@@ -26,3 +26,7 @@ az role assignment create \
 echo "AZURE_CLIENT_ID: $applicationRegistrationAppId"
 echo "AZURE_TENANT_ID: $(az account show --query tenantId --output tsv)"
 echo "AZURE_SUBSCRIPTION_ID: $(az account show --query id --output tsv)"
+
+
+#step6: cleanup
+az group delete --resource-group ToyWebsite --yes --no-wait

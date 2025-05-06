@@ -1,12 +1,13 @@
 name: deploy-toy-website-v3
 concurrency: toy-company
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'deploy/**'
+on: [workflow_dispatch]
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - 'deploy/**'
 
 permissions:
   id-token: write
