@@ -30,8 +30,11 @@ assets:
 
 4) extend workflow action to do linting & pre-flight validation
 
+assets:
+* [scripts\excercise3.sh](.\scripts\excercise4.sh)
 * [.github\workflows\deploy-toy-website-v5.yml](.github\workflows\deploy-toy-website-v5.yml)
 * [deploy\main-v5.bicep](.deploy\main-v5.bicep)
+
 
 # prep chacklist
 * Azure access
