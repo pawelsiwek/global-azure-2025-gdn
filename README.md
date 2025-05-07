@@ -29,6 +29,7 @@ assets:
 * [scripts\excercise3.sh(.\scripts\excercise3.sh)
 
 4) extend workflow action to do linting & pre-flight validation, preview step
+![image](img/4-excercise.png)
 
 assets:
 * [scripts\excercise3.sh](.\scripts\excercise4.sh)
@@ -37,6 +38,8 @@ assets:
 * [.github\workflows\deploy-toy-website-v6.yml](.github\workflows\deploy-toy-website-v6.yml)
 * [deploy\main-v6.bicep](.deploy\main-v6.bicep)
 
+
+4) extend workflow action to support test and prod environments and re-usable workfows
 
 
 # prep chacklist
