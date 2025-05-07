@@ -1,7 +1,7 @@
 
 # step 1: prepare env vars -  replace with Your Github organization and repo!
-githubOrganizationName='mygithubuser'
-githubRepositoryName='toy-website-workflow'
+githubOrganizationName='pawelsiwek'
+githubRepositoryName='global-azure-2025-gdn'
 
 # step2: create app registrations for test and prod
 testApplicationRegistrationDetails=$(az ad app create --display-name 'toy-website-workflow-test')
@@ -15,20 +15,20 @@ prodApplicationRegistrationAppId=$(echo $prodApplicationRegistrationDetails | jq
 # step3: configure federated GitHub credentials for test and prod
 az ad app federated-credential create \
    --id $testApplicationRegistrationObjectId \
-   --parameters "{\"name\":\"toy-website-environments-test\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:environment:Test\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
+   --parameters "{\"name\":\"toy-website-environments-test1\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:environment:Test\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
 
 az ad app federated-credential create \
    --id $testApplicationRegistrationObjectId \
-   --parameters "{\"name\":\"toy-website-environments-test-branch\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:ref:refs/heads/main\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
+   --parameters "{\"name\":\"toy-website-environments-test-branch1\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:ref:refs/heads/main\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
 
 
 az ad app federated-credential create \
    --id $prodApplicationRegistrationObjectId \
-   --parameters "{\"name\":\"toy-website-environments-production\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:environment:Production\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
+   --parameters "{\"name\":\"toy-website-environments-production1\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:environment:Production\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
 
 az ad app federated-credential create \
    --id $prodApplicationRegistrationObjectId \
-   --parameters "{\"name\":\"toy-website-environments-production-branch\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:ref:refs/heads/main\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
+   --parameters "{\"name\":\"toy-website-environments-production-branch1\",\"issuer\":\"https://token.actions.githubusercontent.com\",\"subject\":\"repo:${githubOrganizationName}/${githubRepositoryName}:ref:refs/heads/main\",\"audiences\":[\"api://AzureADTokenExchange\"]}"
 
 #step4: create test and prod resource groups
 testResourceGroupResourceId=$(az group create --name ToyWebsiteTest --location eastus --query id --output tsv)
