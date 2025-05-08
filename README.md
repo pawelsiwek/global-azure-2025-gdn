@@ -1,15 +1,15 @@
 # Global Azure workshop in Gdansk: Deploy on Azure by using Bicep and GitHub
-🎯 Goal: build deploy sample BICEP template with GitHub Actions
+>🎯 Goal: build deploy sample BICEP template with GitHub Actions
 
 # agenda
-1) create GitHub repo & run hello world workflow
+## 💻Excercise #1 Create GitHub repo & run hello world workflow
 ![image](img/1-excercise.png)
 
 assets:
 * [.github\workflows\deploy-toy-website-v1.yml](.github\workflows\deploy-toy-website-v1.yml)
 
 
-2) generate Azure credentials, configure action, deploy Bicep using workflow
+## 💻 Excercise #2 generate Azure credentials, configure action, deploy Bicep using workflow
 ![image](img/2-excercise.png)
 
 assets:
@@ -25,11 +25,10 @@ assets:
  wget https://raw.githubusercontent.com/pawelsiwek/global-azure-2025-gdn/refs/heads/main/scripts/excercise2.sh
 ```
 
-3) deep dive on workload identity
+## 💻 Excercise #3 deep dive on workload identity
 * [scripts\excercise3.sh(.\scripts\excercise3.sh)
 
-4) extend workflow action to do linting & pre-flight validation, preview step
-![image](img/4-excercise.png)
+## 💻Excercise #4 extend workflow action to do linting & pre-flight validation, preview step
 
 assets:
 * [scripts\excercise3.sh](.\scripts\excercise4.sh)
@@ -39,10 +38,25 @@ assets:
 * [deploy\main-v6.bicep](.deploy\main-v6.bicep)
 
 
-4) extend workflow action to support test and prod environments and re-usable workfows
+## 💻 Excercise #5 extend workflow action to support test and prod environments and re-usable workfows
+![image](img/4-excercise.png)
+* [scripts\excercise3.sh](.\scripts\excercise5.sh)
+* [.github\workflows\deploy-toy-website-v7.yml](.github\workflows\deploy-toy-website-v7.yml)
+* [deploy\main-v5.bicep](.deploy\main-v7.bicep)
+* [.github\workflows\deploy-toy-website-v8.yml](.github\workflows\deploy-toy-website-v8.yml)
+* [.github\workflows\deploy-v8.yml](.github\workflows\deploy-v8.yml)
+* [.github\workflows\lint-v8.yml](.github\workflows\lint-v8.yml)
+* [deploy\main-v5.bicep](.deploy\main-v8.bicep)
+
+## Excercise #6 extend workflow to split environments to dev & prod
+![image](img/6-excercise.png)
+* [.github\workflows\deploy-toy-website-v8.yml](.github\workflows\deploy-toy-website-v9.yml)
+* [.github\workflows\deploy-v8.yml](.github\workflows\deploy-v9.yml)
+* [.github\workflows\lint-v8.yml](.github\workflows\lint-v9.yml)
+* [deploy\main-v5.bicep](.deploy\main-v9.bicep)
 
 
-# prep chacklist
+# ✅ prep checklist
 * Azure access
 * az cli (https://learn.microsoft.com/pl-pl/cli/azure/install-azure-cli-windows?pivots=winget)
 * GitHub account
@@ -53,5 +67,5 @@ assets:
     *
 
 
-# references
+# 🔗 references
 full script: https://learn.microsoft.com/en-us/training/paths/bicep-github-actions/ 
